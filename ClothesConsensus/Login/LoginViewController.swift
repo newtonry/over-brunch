@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  LoginViewController.swift
 //  ClothesConsensus
 //
 //  Created by Ryan Newton on 3/30/15.
@@ -8,18 +8,21 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class LoginViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    @IBAction func onLoginTemp(sender: AnyObject) {
+        let nextScreen = ViewControllers.looksListingNavigationController() as UINavigationController
+        self.view.window?.rootViewController = nextScreen
+    }
 }
-

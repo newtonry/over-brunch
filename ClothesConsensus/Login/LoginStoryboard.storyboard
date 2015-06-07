@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="HB9-eE-QJV">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="hEy-3y-rOJ">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" id="HB9-eE-QJV" customClass="LoginViewController" customModule="ClothesConsensus" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wWP-aR-mNg"/>
+                        <viewControllerLayoutGuide type="bottom" id="HSv-NL-tkb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PDb-US-1g5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="nFh-ZD-5Pc">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="lSD-uV-LBS">
+                                <rect key="frame" x="40" y="170" width="240" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="3aU-SA-WY4"/>
+                                    <constraint firstAttribute="height" constant="48" id="aH9-Ra-h1i"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aAl-SB-ujE">
+                                <rect key="frame" x="0.0" y="358" width="320" height="210"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJK-pB-0c8">
+                                        <rect key="frame" x="40" y="20" width="240" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="NYd-Gh-iN2"/>
+                                            <constraint firstAttribute="width" constant="240" id="fWe-ay-VIn"/>
+                                        </constraints>
+                                        <state key="normal" image="facebook-login">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onLoginTemp:" destination="HB9-eE-QJV" eventType="touchUpInside" id="ajN-rg-IeK"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Izl-PP-tH6">
+                                        <rect key="frame" x="40" y="140" width="240" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="a07-pq-QK7"/>
+                                            <constraint firstAttribute="width" constant="240" id="sYQ-oh-zjQ"/>
+                                        </constraints>
+                                        <state key="normal" image="email-login">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mAN-vD-Wl2">
+                                        <rect key="frame" x="40" y="80" width="240" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="240" id="dgm-r6-fbp"/>
+                                            <constraint firstAttribute="height" constant="40" id="uTN-Rd-0ON"/>
+                                        </constraints>
+                                        <state key="normal" image="twitter-login">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="centerX" secondItem="NJK-pB-0c8" secondAttribute="centerX" id="IWG-p6-ZaY"/>
+                                    <constraint firstItem="mAN-vD-Wl2" firstAttribute="top" secondItem="NJK-pB-0c8" secondAttribute="bottom" constant="20" id="Xbm-c5-Xbn"/>
+                                    <constraint firstItem="NJK-pB-0c8" firstAttribute="centerX" secondItem="mAN-vD-Wl2" secondAttribute="centerX" id="f7r-qd-frG"/>
+                                    <constraint firstItem="NJK-pB-0c8" firstAttribute="top" secondItem="aAl-SB-ujE" secondAttribute="top" constant="20" id="hn1-Py-Tbl"/>
+                                    <constraint firstItem="Izl-PP-tH6" firstAttribute="top" secondItem="mAN-vD-Wl2" secondAttribute="bottom" constant="20" id="lym-bg-zXb"/>
+                                    <constraint firstItem="NJK-pB-0c8" firstAttribute="centerX" secondItem="Izl-PP-tH6" secondAttribute="centerX" id="mbC-XA-MIH"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lSD-uV-LBS" firstAttribute="top" secondItem="wWP-aR-mNg" secondAttribute="bottom" constant="150" id="EMm-mV-Glf"/>
+                            <constraint firstItem="aAl-SB-ujE" firstAttribute="top" secondItem="lSD-uV-LBS" secondAttribute="bottom" constant="140" id="FZh-ry-0Ws"/>
+                            <constraint firstItem="nFh-ZD-5Pc" firstAttribute="top" secondItem="PDb-US-1g5" secondAttribute="top" id="KbB-cv-BsL"/>
+                            <constraint firstItem="nFh-ZD-5Pc" firstAttribute="leading" secondItem="PDb-US-1g5" secondAttribute="leading" id="bI1-4P-EkH"/>
+                            <constraint firstItem="aAl-SB-ujE" firstAttribute="leading" secondItem="PDb-US-1g5" secondAttribute="leading" id="bbC-Gp-ElI"/>
+                            <constraint firstAttribute="centerX" secondItem="lSD-uV-LBS" secondAttribute="centerX" id="eu0-FL-kRx"/>
+                            <constraint firstItem="HSv-NL-tkb" firstAttribute="top" secondItem="aAl-SB-ujE" secondAttribute="bottom" id="kKv-5d-Csj"/>
+                            <constraint firstAttribute="trailing" secondItem="nFh-ZD-5Pc" secondAttribute="trailing" id="nDV-Ok-ylK"/>
+                            <constraint firstItem="HSv-NL-tkb" firstAttribute="top" secondItem="nFh-ZD-5Pc" secondAttribute="bottom" id="sE5-iL-kkq"/>
+                            <constraint firstAttribute="trailing" secondItem="aAl-SB-ujE" secondAttribute="trailing" id="zCW-fN-gb9"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pSQ-6o-p8D" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="280" y="511"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="background" width="320" height="568"/>
+        <image name="email-login" width="240" height="40"/>
+        <image name="facebook-login" width="240" height="40"/>
+        <image name="logo" width="240" height="48"/>
+        <image name="twitter-login" width="240" height="40"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

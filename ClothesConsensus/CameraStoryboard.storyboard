@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--Camera View Controller-->
+        <scene sceneID="iQb-YZ-cQh">
+            <objects>
+                <viewController storyboardIdentifier="CameraViewController" id="ANA-ob-SAJ" customClass="CameraViewController" customModule="ClothesConsensus" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="S43-j5-0Ax"/>
+                        <viewControllerLayoutGuide type="bottom" id="DAY-tI-QRs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3aG-BB-YWl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kr5-CV-0ZL">
+                                <rect key="frame" x="0.0" y="64" width="320" height="320"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="kr5-CV-0ZL" secondAttribute="height" multiplier="1:1" id="NN6-4s-9E6"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h24-rb-qy3">
+                                <rect key="frame" x="0.0" y="384" width="320" height="184"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p3F-nq-JBI">
+                                        <rect key="frame" x="110" y="20" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="9Ni-Jt-762"/>
+                                            <constraint firstAttribute="height" constant="100" id="v9N-uQ-eKx"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="take-photo">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="takePhoto:" destination="ANA-ob-SAJ" eventType="touchUpInside" id="SxP-ub-9eY"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DUW-Cv-WvT">
+                                        <rect key="frame" x="239" y="89" width="43" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="43" id="87s-tg-nXS"/>
+                                            <constraint firstAttribute="height" constant="20" id="YJE-Zi-QEC"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="flash-off">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="flashSwitch:" destination="ANA-ob-SAJ" eventType="touchUpInside" id="m2o-Re-ATY"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JJw-DN-p2p">
+                                        <rect key="frame" x="245" y="30" width="30" height="29"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="29" id="IFM-2t-atG"/>
+                                            <constraint firstAttribute="width" constant="30" id="W5S-hQ-lsQ"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="flip-camera">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="flipCamera:" destination="ANA-ob-SAJ" eventType="touchUpInside" id="Zw0-Oo-Hlj"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="centerX" secondItem="p3F-nq-JBI" secondAttribute="centerX" id="9hN-oN-prd"/>
+                                    <constraint firstItem="JJw-DN-p2p" firstAttribute="top" secondItem="h24-rb-qy3" secondAttribute="top" constant="30" id="FfH-49-DMv"/>
+                                    <constraint firstItem="p3F-nq-JBI" firstAttribute="top" secondItem="h24-rb-qy3" secondAttribute="top" constant="20" id="MPq-5S-vJw"/>
+                                    <constraint firstItem="JJw-DN-p2p" firstAttribute="centerX" secondItem="DUW-Cv-WvT" secondAttribute="centerX" id="cFX-Ap-avh"/>
+                                    <constraint firstItem="DUW-Cv-WvT" firstAttribute="top" secondItem="JJw-DN-p2p" secondAttribute="bottom" constant="30" id="cMj-d0-YaS"/>
+                                    <constraint firstAttribute="trailing" secondItem="JJw-DN-p2p" secondAttribute="trailing" constant="45" id="ib4-cV-1aC"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="h24-rb-qy3" secondAttribute="trailing" id="2cl-Ng-dDv"/>
+                            <constraint firstItem="h24-rb-qy3" firstAttribute="top" secondItem="kr5-CV-0ZL" secondAttribute="bottom" id="8gv-g1-Qq1"/>
+                            <constraint firstAttribute="bottom" secondItem="h24-rb-qy3" secondAttribute="bottom" id="DDc-ge-tkc"/>
+                            <constraint firstItem="kr5-CV-0ZL" firstAttribute="top" secondItem="S43-j5-0Ax" secondAttribute="bottom" id="Hey-1R-0eU"/>
+                            <constraint firstItem="kr5-CV-0ZL" firstAttribute="leading" secondItem="3aG-BB-YWl" secondAttribute="leading" id="fsd-Fu-L4j"/>
+                            <constraint firstItem="h24-rb-qy3" firstAttribute="leading" secondItem="3aG-BB-YWl" secondAttribute="leading" id="jlJ-2w-U4t"/>
+                            <constraint firstAttribute="trailing" secondItem="kr5-CV-0ZL" secondAttribute="trailing" id="mQs-qF-PzG"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="OY4-5v-qfh">
+                        <barButtonItem key="rightBarButtonItem" image="x" id="ByR-Tf-aSX">
+                            <connections>
+                                <action selector="exitButtonPressed:" destination="ANA-ob-SAJ" id="Kae-qs-Liw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="picturePreviewView" destination="kr5-CV-0ZL" id="qOR-xk-sFY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Ko-ZI-UIY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="725" y="317"/>
+        </scene>
+        <!--Main Navigation View Controller-->
+        <scene sceneID="V8P-bS-9MY">
+            <objects>
+                <navigationController storyboardIdentifier="CameraNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="TeE-40-KgG" customClass="MainNavigationViewController" customModule="ClothesConsensus" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="224-6N-gqj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ANA-ob-SAJ" kind="relationship" relationship="rootViewController" id="QSn-dI-FmF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yCF-IU-cJS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="193" y="317"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="flash-off" width="43" height="20"/>
+        <image name="flip-camera" width="30" height="29"/>
+        <image name="take-photo" width="100" height="100"/>
+        <image name="x" width="20" height="20"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
