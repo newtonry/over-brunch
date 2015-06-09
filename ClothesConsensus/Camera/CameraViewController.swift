@@ -58,12 +58,54 @@ class CameraViewController: BaseViewController {
     }
     
     @IBAction func flashSwitch(sender: UIButton) {
+        let camera = cameras[0]
+
+        if !camera.isFlashModeSupported(AVCaptureFlashMode.On) {
+            return
+        }
         
+        camera.lockForConfiguration(nil)
         
+        if camera.flashMode == AVCaptureFlashMode.Off {
+            camera.flashMode = AVCaptureFlashMode.On
+            println("Flash is on")
+        } else if camera.flashMode == AVCaptureFlashMode.On {
+            camera.flashMode = AVCaptureFlashMode.Off
+            println("Flash is off")
+        }
     }
     
 //    NOT SURE IF THIS IS THE RIGHT WAY TO DO IT. MAY NEED TO LOOK INTO UIIMAGEPICKER A BIT MORE
     @IBAction func takePhoto(sender: UIButton) {
+        var output = AVCaptureStillImageOutput()
+        
+        
+        
+        output.outputSettings = [AVVideoCodecKey: AVVideoCodecJPEG]
+
+        output.captureStillImageAsynchronouslyFromConnection(output.connectionWithMediaType(AVMediaTypeVideo), completionHandler: nil
+        
+            
+        )
+        
+        
+        
+        
+        
+        //        captureSession.addOutput(output)
+//        
+//        
+
+//        
+//        
+//        
+//        
+
+        
+        
+        
+        
+//        
 //        var imageOutput: AVCaptureStillImageOutput = AVCaptureStillImageOutput()
 //        imageOutput.captureStillImageAsynchronouslyFromConnection(imageOutput.connectionWithMediaType(AVMediaTypeVideo)) {
 //            (imageDataSampleBuffer, error) -> Void in
@@ -86,6 +128,16 @@ class CameraViewController: BaseViewController {
 //                }
 //            }
 //        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     

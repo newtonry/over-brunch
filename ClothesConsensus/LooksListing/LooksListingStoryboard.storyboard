@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Looks Listing View Controller-->
@@ -59,8 +60,7 @@
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="look-example1" translatesAutoresizingMaskIntoConstraints="NO" id="Qva-M7-Pea">
                                                             <rect key="frame" x="60" y="10" width="250" height="250"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="250" id="3jc-U6-mKr"/>
-                                                                <constraint firstAttribute="width" constant="250" id="h9A-5m-eNS"/>
+                                                                <constraint firstAttribute="width" secondItem="Qva-M7-Pea" secondAttribute="height" multiplier="1:1" id="NVj-gh-Zv0"/>
                                                             </constraints>
                                                         </imageView>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UQ0-g0-3QT">
@@ -85,6 +85,9 @@
                                                                         </imageView>
                                                                         <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="lMg-Ww-c4Z">
                                                                             <rect key="frame" x="23" y="5" width="204" height="31"/>
+                                                                            <connections>
+                                                                                <action selector="lookSliderSlid:" destination="vVT-4w-RwI" eventType="editingDidEnd" id="A82-ih-vTY"/>
+                                                                            </connections>
                                                                         </slider>
                                                                     </subviews>
                                                                     <constraints>
@@ -106,9 +109,39 @@
                                                                 <constraint firstAttribute="bottom" secondItem="Kh9-OY-rRm" secondAttribute="bottom" id="ubt-bS-Teq"/>
                                                             </constraints>
                                                         </view>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZZ1-3b-8Yb">
+                                                            <rect key="frame" x="10" y="10" width="25" height="25"/>
+                                                            <subviews>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock-hands" translatesAutoresizingMaskIntoConstraints="NO" id="ZWm-By-Whv">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" secondItem="ZWm-By-Whv" secondAttribute="height" multiplier="1:1" id="BKc-h7-sRo"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=":45" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i6x-oU-jfT">
+                                                                    <rect key="frame" x="0.0" y="27" width="25" height="14"/>
+                                                                    <fontDescription key="fontDescription" name="Cochin" family="Cochin" pointSize="12"/>
+                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="25" id="49m-24-81T"/>
+                                                                <constraint firstAttribute="trailing" secondItem="ZWm-By-Whv" secondAttribute="trailing" id="ENr-uo-NP5"/>
+                                                                <constraint firstItem="i6x-oU-jfT" firstAttribute="leading" secondItem="ZZ1-3b-8Yb" secondAttribute="leading" id="IrN-xY-kCl"/>
+                                                                <constraint firstItem="i6x-oU-jfT" firstAttribute="top" secondItem="ZWm-By-Whv" secondAttribute="bottom" constant="2" id="MJL-Iv-wos"/>
+                                                                <constraint firstAttribute="width" constant="25" id="PbI-XV-6Lx"/>
+                                                                <constraint firstItem="ZWm-By-Whv" firstAttribute="leading" secondItem="ZZ1-3b-8Yb" secondAttribute="leading" id="Rg1-o0-hJx"/>
+                                                                <constraint firstAttribute="trailing" secondItem="i6x-oU-jfT" secondAttribute="trailing" id="chf-TW-jdq"/>
+                                                                <constraint firstItem="ZWm-By-Whv" firstAttribute="top" secondItem="ZZ1-3b-8Yb" secondAttribute="top" id="eOJ-Rk-eCb"/>
+                                                            </constraints>
+                                                        </view>
                                                     </subviews>
                                                     <constraints>
+                                                        <constraint firstItem="ZZ1-3b-8Yb" firstAttribute="top" secondItem="Smj-RT-4iT" secondAttribute="top" constant="10" id="Kir-db-ea1"/>
+                                                        <constraint firstItem="Qva-M7-Pea" firstAttribute="leading" secondItem="Smj-RT-4iT" secondAttribute="leading" constant="60" id="ZwU-2P-GiR"/>
                                                         <constraint firstItem="UQ0-g0-3QT" firstAttribute="leading" secondItem="Smj-RT-4iT" secondAttribute="leading" id="aSb-Dq-PnL"/>
+                                                        <constraint firstItem="ZZ1-3b-8Yb" firstAttribute="leading" secondItem="Smj-RT-4iT" secondAttribute="leading" constant="10" id="afH-B4-C3S"/>
                                                         <constraint firstAttribute="trailing" secondItem="Qva-M7-Pea" secondAttribute="trailing" constant="10" id="cvQ-cE-tWi"/>
                                                         <constraint firstItem="Qva-M7-Pea" firstAttribute="top" secondItem="Smj-RT-4iT" secondAttribute="top" constant="10" id="dzx-Dm-Rvy"/>
                                                         <constraint firstAttribute="trailing" secondItem="UQ0-g0-3QT" secondAttribute="trailing" id="h5t-3a-AF5"/>
@@ -156,7 +189,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sKL-IQ-aQE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="728" y="562"/>
+            <point key="canvasLocation" x="728" y="559"/>
         </scene>
         <!--Main Navigation View Controller-->
         <scene sceneID="Mac-BT-gqc">
@@ -179,6 +212,7 @@
     </scenes>
     <resources>
         <image name="camera-barbuttonitem" width="28" height="24"/>
+        <image name="clock-hands" width="20" height="20"/>
         <image name="dialogue-box" width="268" height="42"/>
         <image name="look-example1" width="250" height="250"/>
         <image name="person-baritem" width="20" height="30"/>

@@ -17,12 +17,6 @@ class LooksListingViewController: BaseViewController, UITableViewDataSource, UIT
         looksTableView.dataSource = self
         looksTableView.delegate = self
 
-    
-//        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "nav-bar-bg"),
-//                    forBarMetrics: .Default)
-
-
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,13 +27,19 @@ class LooksListingViewController: BaseViewController, UITableViewDataSource, UIT
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("lookCell") as UITableViewCell
         return cell
-        
-        
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 10
     }
+
+    @IBAction func lookSliderSlid(sender: UISlider) {
+        println("Touch Drag Exit")
+        
+        
+    
+    }
+    
     
     
     @IBAction func cameraButtonPressed(sender: UIBarButtonItem) {
