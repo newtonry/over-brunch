@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LooksListingViewController: BaseViewController, UITableViewDataSource, UITableViewDelegate {
+class LooksListingViewController: BaseViewController, UITableViewDataSource, UITableViewDelegate, LookVotingTableViewCellDelegate {
 
     @IBOutlet weak var looksTableView: UITableView!
     override func viewDidLoad() {
@@ -25,7 +25,8 @@ class LooksListingViewController: BaseViewController, UITableViewDataSource, UIT
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("lookCell") as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("lookCell") as LookVotingTableViewCell
+        cell.delegate = self
         return cell
     }
     
@@ -33,21 +34,22 @@ class LooksListingViewController: BaseViewController, UITableViewDataSource, UIT
         return 10
     }
 
-    @IBAction func lookSliderSlid(sender: UISlider) {
-        println("Touch Drag Exit")
-        
-        
-    
-    }
-    
-    
-    
     @IBAction func cameraButtonPressed(sender: UIBarButtonItem) {
         let cameraViewController = ViewControllers.cameraViewController() as UINavigationController
         self.navigationController!.presentViewController(cameraViewController, animated: true, completion: nil)
         
     }
 
+    func onVoteSliderSlid(cellSlid: UITableViewCell, voteValue: Float) {
+        let indexPath: NSIndexPath = looksTableView.indexPathForCell(cellSlid)!
+        let newIndexPath = NSIndexPath(forRow: indexPath.row + 1, inSection: indexPath.section)
+        // TODO need to handle the case that there are no more cells
+        looksTableView.scrollToRowAtIndexPath(newIndexPath, atScrollPosition: UITableViewScrollPosition.Top, animated: true)
+        
+        println("The voted value was \(voteValue)")
+    }
+
+    
     /*
     // MARK: - Navigation
 

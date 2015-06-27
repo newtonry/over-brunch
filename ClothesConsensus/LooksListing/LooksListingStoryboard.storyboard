@@ -86,7 +86,7 @@
                                                                         <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="lMg-Ww-c4Z">
                                                                             <rect key="frame" x="23" y="5" width="204" height="31"/>
                                                                             <connections>
-                                                                                <action selector="lookSliderSlid:" destination="vVT-4w-RwI" eventType="editingDidEnd" id="A82-ih-vTY"/>
+                                                                                <action selector="onVoteSliderSlid:" destination="kPC-yL-pQV" eventType="touchUpInside" id="58p-kO-Qor"/>
                                                                             </connections>
                                                                         </slider>
                                                                     </subviews>
