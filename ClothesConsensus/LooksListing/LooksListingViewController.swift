@@ -36,6 +36,8 @@ class LooksListingViewController: BaseViewController, UITableViewDataSource, UIT
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("lookCell") as LookVotingTableViewCell
+        let look = self.looks![indexPath.row]
+        cell.setFromLook(look)
         cell.delegate = self
         return cell
     }

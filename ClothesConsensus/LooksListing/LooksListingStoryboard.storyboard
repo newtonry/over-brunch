@@ -161,6 +161,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="lookImageView" destination="Qva-M7-Pea" id="IEc-9T-fzz"/>
                                             <outlet property="votingSlider" destination="lMg-Ww-c4Z" id="Yrl-dO-47k"/>
                                         </connections>
                                     </tableViewCell>

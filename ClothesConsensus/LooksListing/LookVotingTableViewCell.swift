@@ -15,7 +15,11 @@ protocol LookVotingTableViewCellDelegate {
 
 
 class LookVotingTableViewCell: UITableViewCell {
+
+    @IBOutlet weak var lookImageView: UIImageView!
+    
     var delegate: LookVotingTableViewCellDelegate?
+    var look: Look?
     
 
     @IBOutlet weak var votingSlider: UISlider!
@@ -23,6 +27,14 @@ class LookVotingTableViewCell: UITableViewCell {
         super.awakeFromNib()
         setupSlider()
         setupStyles()
+    }
+    
+    func setFromLook(look: Look) {
+        self.look = look
+        lookImageView.setImageWithURL(look.imageUrl)
+        
+        
+        
     }
     
     func setupStyles() {
@@ -42,7 +54,6 @@ class LookVotingTableViewCell: UITableViewCell {
         votingSlider.maximumTrackTintColor = UIColor(red: 0.867, green: 0.867, blue: 0.867, alpha:1)
         
     }
-    
     
     @IBAction func onVoteSliderSlid(sender: UISlider) {
         let voteValue = sender.value
