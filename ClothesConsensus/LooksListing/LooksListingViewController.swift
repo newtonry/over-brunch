@@ -9,11 +9,14 @@
 import UIKit
 
 class LooksListingViewController: BaseViewController, UITableViewDataSource, UITableViewDelegate, LookVotingTableViewCellDelegate {
-
+    var looks: [Look]?
+    
+    
     @IBOutlet weak var looksTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        CCClient.sharedInstance.getLooks(self.getLooksCallback)
         looksTableView.dataSource = self
         looksTableView.delegate = self
 
@@ -24,6 +27,13 @@ class LooksListingViewController: BaseViewController, UITableViewDataSource, UIT
         // Dispose of any resources that can be recreated.
     }
     
+    // Used for CCClient.sharedInstance.getLooks
+    func getLooksCallback(response: NSArray) -> Void {
+        self.looks = Look.looksFromJson(response)
+        looksTableView.reloadData()
+    }
+    
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("lookCell") as LookVotingTableViewCell
         cell.delegate = self
@@ -31,7 +41,10 @@ class LooksListingViewController: BaseViewController, UITableViewDataSource, UIT
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        if self.looks != nil {
+            return self.looks!.count
+        }
+        return 0
     }
 
     @IBAction func cameraButtonPressed(sender: UIBarButtonItem) {

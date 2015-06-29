@@ -12,9 +12,34 @@ let BASE_URL = "http://localhost:4567/"
 let LOOKS_ENDPOINT = "looks/"
 
 
-class CCClient: NSObject {
+class CCClient: BDBOAuth1RequestOperationManager {
+    // TODO make this a singleton?
+
+    class var sharedInstance: CCClient {
+        struct Static {
+            static let instance = CCClient()
+        }
+        
+        return Static.instance
+    }
     
     
+    func getLooks(callback: (response: NSArray) -> Void) {
+        let url = "\(BASE_URL)\(LOOKS_ENDPOINT)"
+        let params = NSDictionary()
+        
+        GET(url, parameters: params, success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
+            println(response)
+         
+            callback(response: response as NSArray)
+            
+            
+            },
+            failure: nil
+        )
+        
+        
+    }
     
     
     
