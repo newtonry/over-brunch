@@ -8,7 +8,7 @@
 
 import UIKit
 
-let BASE_URL = "http://localhost:4567/"
+let BASE_URL = "http://over-brunch-mock-api-d.elasticbeanstalk.com/"
 let LOOKS_ENDPOINT = "looks/"
 
 
