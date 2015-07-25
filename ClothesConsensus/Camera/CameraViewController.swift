@@ -78,16 +78,24 @@ class CameraViewController: BaseViewController {
 //    NOT SURE IF THIS IS THE RIGHT WAY TO DO IT. MAY NEED TO LOOK INTO UIIMAGEPICKER A BIT MORE
     @IBAction func takePhoto(sender: UIButton) {
         var output = AVCaptureStillImageOutput()
-        
+        captureSession.addOutput(output)
         
         
         output.outputSettings = [AVVideoCodecKey: AVVideoCodecJPEG]
 
-        output.captureStillImageAsynchronouslyFromConnection(output.connectionWithMediaType(AVMediaTypeVideo), completionHandler: nil
+        output.captureStillImageAsynchronouslyFromConnection(output.connectionWithMediaType(AVMediaTypeVideo), completionHandler: {(imageBuffer, error) -> Void in
+            
+            let imageDataJpeg = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(imageBuffer)
+            var pickedImage: UIImage = UIImage(data: imageDataJpeg)!
+                self.picturePreviewView.addSubview(UIImageView(image: pickedImage))
+            
+            
+            
+            }
         
             
         )
-        
+            
         
         
         

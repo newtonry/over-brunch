@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ThumbnailTextboxView" customModule="ClothesConsensus" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thumb-example1" translatesAutoresizingMaskIntoConstraints="NO" id="Bia-3t-ruM">
+                    <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="9w0-yr-dIE"/>
+                        <constraint firstAttribute="height" constant="40" id="iD3-3n-6xb"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dialogue-box" translatesAutoresizingMaskIntoConstraints="NO" id="fHM-ql-wHW">
+                    <rect key="frame" x="32" y="0.0" width="288" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="iGO-fT-5ps"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Bia-3t-ruM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="f8h-hq-hEV"/>
+                <constraint firstAttribute="trailing" secondItem="fHM-ql-wHW" secondAttribute="trailing" id="igf-RF-Ifk"/>
+                <constraint firstItem="fHM-ql-wHW" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="rMM-ql-Cnp"/>
+                <constraint firstItem="fHM-ql-wHW" firstAttribute="leading" secondItem="Bia-3t-ruM" secondAttribute="trailing" constant="-8" id="vmq-vJ-bWM"/>
+                <constraint firstItem="Bia-3t-ruM" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="yP1-PQ-uQW"/>
+            </constraints>
+            <point key="canvasLocation" x="7" y="355"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="dialogue-box" width="268" height="42"/>
+        <image name="thumb-example1" width="40" height="40"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

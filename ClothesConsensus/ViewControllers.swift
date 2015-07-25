@@ -34,5 +34,11 @@ class ViewControllers: NSObject {
         return cameraNavigationController
     }
 
+    class func photoPostViewController() -> UIViewController {
+        let storyboard = UIStoryboard(name: "PhotoPostStoryboard", bundle: nil)
+        let photoPostViewController = storyboard.instantiateViewControllerWithIdentifier("PhotoPostViewController") as PhotoPostViewController
+        return photoPostViewController
+    }
+    
 
 }

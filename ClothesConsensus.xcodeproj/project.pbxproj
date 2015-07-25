@@ -20,6 +20,10 @@
 		C53723541ACA40E8003036CB /* LooksListingStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C53723531ACA40E8003036CB /* LooksListingStoryboard.storyboard */; };
 		C53723571ACA4119003036CB /* LooksListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53723561ACA4119003036CB /* LooksListingViewController.swift */; };
 		C57441CE1ACCD0A500FAFCCB /* LookVotingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57441CD1ACCD0A500FAFCCB /* LookVotingTableViewCell.swift */; };
+		C589321D1B642CC90055D813 /* PhotoPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C589321C1B642CC90055D813 /* PhotoPostViewController.swift */; };
+		C589321F1B642D680055D813 /* PhotoPostStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C589321E1B642D680055D813 /* PhotoPostStoryboard.storyboard */; };
+		C58932221B642E630055D813 /* ThumbnailTextboxView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C58932211B642E630055D813 /* ThumbnailTextboxView.xib */; };
+		C58932241B64306C0055D813 /* ThumbnailTextboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58932231B64306C0055D813 /* ThumbnailTextboxView.swift */; };
 		C5A6C1FE1B3F3BE400A9F270 /* CCClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A6C1FD1B3F3BE400A9F270 /* CCClient.swift */; };
 		C5AAF62C1B24E2DB000409A3 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AAF62B1B24E2DB000409A3 /* BaseViewController.swift */; };
 		C5D5E0851B40BC9100AB7817 /* Look.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D5E0841B40BC9100AB7817 /* Look.swift */; };
@@ -56,6 +60,10 @@
 		C53723531ACA40E8003036CB /* LooksListingStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LooksListingStoryboard.storyboard; path = LooksListing/LooksListingStoryboard.storyboard; sourceTree = "<group>"; };
 		C53723561ACA4119003036CB /* LooksListingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LooksListingViewController.swift; path = LooksListing/LooksListingViewController.swift; sourceTree = "<group>"; };
 		C57441CD1ACCD0A500FAFCCB /* LookVotingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LookVotingTableViewCell.swift; path = LooksListing/LookVotingTableViewCell.swift; sourceTree = "<group>"; };
+		C589321C1B642CC90055D813 /* PhotoPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoPostViewController.swift; path = PhotoPost/PhotoPostViewController.swift; sourceTree = "<group>"; };
+		C589321E1B642D680055D813 /* PhotoPostStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = PhotoPostStoryboard.storyboard; path = PhotoPost/PhotoPostStoryboard.storyboard; sourceTree = "<group>"; };
+		C58932211B642E630055D813 /* ThumbnailTextboxView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ThumbnailTextboxView.xib; path = CommonUI/ThumbnailTextboxView.xib; sourceTree = "<group>"; };
+		C58932231B64306C0055D813 /* ThumbnailTextboxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ThumbnailTextboxView.swift; path = CommonUI/ThumbnailTextboxView.swift; sourceTree = "<group>"; };
 		C5A6C1FD1B3F3BE400A9F270 /* CCClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CCClient.swift; path = Client/CCClient.swift; sourceTree = "<group>"; };
 		C5AAF62B1B24E2DB000409A3 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		C5D5E0821B3F48A500AB7817 /* ClothesConsensus-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ClothesConsensus-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
@@ -127,12 +135,14 @@
 				C5D5E0831B40BC6200AB7817 /* Models */,
 				C53723271ACA27FC003036CB /* AppDelegate.swift */,
 				C5AAF62B1B24E2DB000409A3 /* BaseViewController.swift */,
+				C58932201B642DDA0055D813 /* CommonUI */,
 				C5A6C1FD1B3F3BE400A9F270 /* CCClient.swift */,
 				C51287F21AD37BB800580000 /* MainNavigationViewController.swift */,
 				C53723551ACA4101003036CB /* LooksListing */,
 				C511740D1AD384A900D64F72 /* Camera */,
 				C53723471ACA281F003036CB /* Login */,
 				C537232E1ACA27FC003036CB /* Images.xcassets */,
+				C589321B1B642C6E0055D813 /* PhotoReview */,
 				C53723301ACA27FC003036CB /* LaunchScreen.xib */,
 				C53723251ACA27FC003036CB /* Supporting Files */,
 			);
@@ -181,6 +191,24 @@
 				C53723561ACA4119003036CB /* LooksListingViewController.swift */,
 			);
 			name = LooksListing;
+			sourceTree = "<group>";
+		};
+		C589321B1B642C6E0055D813 /* PhotoReview */ = {
+			isa = PBXGroup;
+			children = (
+				C589321C1B642CC90055D813 /* PhotoPostViewController.swift */,
+				C589321E1B642D680055D813 /* PhotoPostStoryboard.storyboard */,
+			);
+			name = PhotoReview;
+			sourceTree = "<group>";
+		};
+		C58932201B642DDA0055D813 /* CommonUI */ = {
+			isa = PBXGroup;
+			children = (
+				C58932211B642E630055D813 /* ThumbnailTextboxView.xib */,
+				C58932231B64306C0055D813 /* ThumbnailTextboxView.swift */,
+			);
+			name = CommonUI;
 			sourceTree = "<group>";
 		};
 		C5D5E0831B40BC6200AB7817 /* Models */ = {
@@ -283,7 +311,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C53723321ACA27FC003036CB /* LaunchScreen.xib in Resources */,
+				C58932221B642E630055D813 /* ThumbnailTextboxView.xib in Resources */,
 				C53723541ACA40E8003036CB /* LooksListingStoryboard.storyboard in Resources */,
+				C589321F1B642D680055D813 /* PhotoPostStoryboard.storyboard in Resources */,
 				C537232F1ACA27FC003036CB /* Images.xcassets in Resources */,
 				C507111A1B23A727000CB5CD /* CameraStoryboard.storyboard in Resources */,
 				C537234B1ACA288B003036CB /* LoginStoryboard.storyboard in Resources */,
@@ -338,6 +368,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5D5E0851B40BC9100AB7817 /* Look.swift in Sources */,
+				C589321D1B642CC90055D813 /* PhotoPostViewController.swift in Sources */,
 				C53723571ACA4119003036CB /* LooksListingViewController.swift in Sources */,
 				C51287F31AD37BB800580000 /* MainNavigationViewController.swift in Sources */,
 				C5A6C1FE1B3F3BE400A9F270 /* CCClient.swift in Sources */,
@@ -346,6 +377,7 @@
 				C50711181B23A2C2000CB5CD /* CameraViewController.swift in Sources */,
 				C5AAF62C1B24E2DB000409A3 /* BaseViewController.swift in Sources */,
 				C57441CE1ACCD0A500FAFCCB /* LookVotingTableViewCell.swift in Sources */,
+				C58932241B64306C0055D813 /* ThumbnailTextboxView.swift in Sources */,
 				C53723281ACA27FC003036CB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
