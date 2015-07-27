@@ -8,14 +8,23 @@
 
 import UIKit
 
-class PhotoPostViewController: UIViewController {
+class PhotoPostViewController: BaseViewController {
+    
+    var photo: UIImage!
+    
+    @IBOutlet weak var previewImage: UIImageView!
+    
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+            previewImage.image = photo
     }
-
+    
+    
+    @IBAction func postPhotoButtonPressed(sender: UIButton) {
+        println("The photo post button was pressed")
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

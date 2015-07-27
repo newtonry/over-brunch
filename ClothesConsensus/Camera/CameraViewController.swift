@@ -89,63 +89,16 @@ class CameraViewController: BaseViewController {
             var pickedImage: UIImage = UIImage(data: imageDataJpeg)!
                 self.picturePreviewView.addSubview(UIImageView(image: pickedImage))
             
+                let photoPostViewController = ViewControllers.photoPostViewController() as PhotoPostViewController
+                photoPostViewController.photo = pickedImage
+            
+                self.navigationController!.presentViewController(photoPostViewController, animated: true, completion: nil)
             
             
             }
         
             
         )
-            
-        
-        
-        
-        
-        //        captureSession.addOutput(output)
-//        
-//        
-
-//        
-//        
-//        
-//        
-
-        
-        
-        
-        
-//        
-//        var imageOutput: AVCaptureStillImageOutput = AVCaptureStillImageOutput()
-//        imageOutput.captureStillImageAsynchronouslyFromConnection(imageOutput.connectionWithMediaType(AVMediaTypeVideo)) {
-//            (imageDataSampleBuffer, error) -> Void in
-//            
-//            if let imageDataSampleBuffer = imageDataSampleBuffer {
-//                let imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(imageDataSampleBuffer)
-//                println("got image data:")
-//                if let image = UIImage(data: imageData) {
-//                    println("CAM-CONTROLLER: inside captureImageNow -- set the image: \(image)")
-//                    
-////                    self.cameraPreviewContainer.image = image
-//                    
-//                    
-//                    
-//                    //save the image to library
-//                    let library = ALAssetsLibrary()
-//                    library.writeImageDataToSavedPhotosAlbum(imageData, metadata: nil, completionBlock: nil)
-//                    
-//                    println("The photo has been saved!")
-//                }
-//            }
-//        }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
     }
 
     
