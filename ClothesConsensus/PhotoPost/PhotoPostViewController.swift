@@ -17,12 +17,21 @@ class PhotoPostViewController: BaseViewController {
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-            previewImage.image = photo
+
+        // just for dev purposes
+        if (photo == nil) {
+            photo = UIImage(named: "look-example1.png")
+        }
+
+        previewImage.image = photo
     }
     
     
     @IBAction func postPhotoButtonPressed(sender: UIButton) {
         println("The photo post button was pressed")
+        
+        CCClient.sharedInstance.postLook(photo)
+        
     }
     
     override func didReceiveMemoryWarning() {

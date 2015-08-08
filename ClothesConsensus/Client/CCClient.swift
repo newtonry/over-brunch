@@ -8,8 +8,10 @@
 
 import UIKit
 
-//let BASE_URL = "http://over-brunch-mock-api-d.elasticbeanstalk.com/"
-let BASE_URL = "http://localhost:4567/"
+let BASE_URL = "http://over-brunch-mock-api-d.elasticbeanstalk.com/"
+//let BASE_URL = "http://localhost:4567/"
+
+
 let LOOKS_ENDPOINT = "looks/"
 
 
@@ -36,9 +38,17 @@ class CCClient: BDBOAuth1RequestOperationManager {
         )
     }
     
-    func postLook() {
+    
+    func postLook(look: UIImage) { // this will need more metadata in the future obviously
+        let imageString: NSString = UIImagePNGRepresentation(look).base64EncodedStringWithOptions(.allZeros)
         let url = "\(BASE_URL)\(LOOKS_ENDPOINT)"
-        let params = ["test": "A test message"]
-        POST(url, parameters: params, success: nil, failure: nil)
+        let params = ["imageString": imageString]
+        POST(url, parameters: params, success: {(operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
+                println("Uploading the photo was a success")            
+            },
+            failure: {(operation: AFHTTPRequestOperation!, error: NSError!) -> Void in                
+                println("There was an error uploading the photo")
+            }        
+        )
     }
 }
