@@ -8,8 +8,8 @@
 
 import UIKit
 
-let BASE_URL = "http://over-brunch-mock-api-d.elasticbeanstalk.com/"
-//let BASE_URL = "http://localhost:4567/"
+//let BASE_URL = "http://over-brunch-mock-api-d.elasticbeanstalk.com/"
+let BASE_URL = "http://localhost:4567/"
 
 
 let LOOKS_ENDPOINT = "looks/"
@@ -46,7 +46,7 @@ class CCClient: BDBOAuth1RequestOperationManager {
         POST(url, parameters: params, success: {(operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
                 println("Uploading the photo was a success")            
             },
-            failure: {(operation: AFHTTPRequestOperation!, error: NSError!) -> Void in                
+            failure: {(operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
                 println("There was an error uploading the photo")
             }        
         )

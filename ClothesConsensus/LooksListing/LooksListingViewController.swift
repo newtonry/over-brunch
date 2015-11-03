@@ -11,15 +11,18 @@ import UIKit
 class LooksListingViewController: BaseViewController, UITableViewDataSource, UITableViewDelegate, LookVotingTableViewCellDelegate {
     var looks: [Look]?
     
-    
     @IBOutlet weak var looksTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         CCClient.sharedInstance.getLooks(self.getLooksCallback)
+        setupLooksTableView()
+    }
+    
+    func setupLooksTableView() {
         looksTableView.dataSource = self
         looksTableView.delegate = self
-
+        looksTableView.scrollEnabled = false
     }
 
     override func didReceiveMemoryWarning() {
