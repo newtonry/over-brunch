@@ -47,8 +47,9 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Smj-RT-4iT">
                                                     <rect key="frame" x="0.0" y="60" width="320" height="352"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="look-example1" translatesAutoresizingMaskIntoConstraints="NO" id="Qva-M7-Pea">
+                                                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="look-example1" translatesAutoresizingMaskIntoConstraints="NO" id="Qva-M7-Pea">
                                                             <rect key="frame" x="60" y="10" width="250" height="250"/>
+                                                            <gestureRecognizers/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="Qva-M7-Pea" secondAttribute="height" multiplier="1:1" id="NVj-gh-Zv0"/>
                                                             </constraints>
