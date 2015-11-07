@@ -194,12 +194,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ClothesConsensus/LooksListing/LookVotingTableViewCell.swift"
-            timestampString = "468620881.625345"
+            timestampString = "468622422.959181"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "86"
             endingLineNumber = "86"
-            landmarkName = "calculateVotingValueFromPoints(_:endingPoint:)"
+            landmarkName = "calculateVoteValueFromPoints(_:endingPoint:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -22,14 +22,13 @@ class LookVotingTableViewCell: UITableViewCell, UIGestureRecognizerDelegate {
     var look: Look?
     var startingPoint: CGPoint = CGPoint()
 
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         setupSlider()
         setupGestureRecognizer()
         setupStyles()
     }
-    
+
     func setFromLook(look: Look) {
         self.look = look
         var placeHolderImage = UIImage(named: "img-placeholder")
@@ -38,6 +37,7 @@ class LookVotingTableViewCell: UITableViewCell, UIGestureRecognizerDelegate {
     
     func setupStyles() {
         self.selectionStyle = UITableViewCellSelectionStyle.None
+        self.votingSlider.value = 0.5
     }
     
     func setupSlider() {
@@ -71,15 +71,16 @@ class LookVotingTableViewCell: UITableViewCell, UIGestureRecognizerDelegate {
             startingPoint = sender.locationInView(self)
         } else if sender.state == UIGestureRecognizerState.Changed {
             var currentPoint = sender.locationInView(self)
-            var difference = calculateVotingValueFromPoints(startingPoint, endingPoint: currentPoint)
-            setSliderPositionBasedOnVotingValue(difference)
+            var voteValue = calculateVoteValueFromPoints(startingPoint, endingPoint: currentPoint)
+            setSliderPositionBasedOnVotingValue(voteValue)
         } else if sender.state == UIGestureRecognizerState.Ended {
             var currentPoint = sender.locationInView(self)
-            var difference = calculateVotingValueFromPoints(startingPoint, endingPoint: currentPoint)
+            var voteValue = calculateVoteValueFromPoints(startingPoint, endingPoint: currentPoint)
+            self.delegate?.onVoteSliderSlid(self, voteValue: Float(voteValue))
         }
     }
 
-    func calculateVotingValueFromPoints(startingPoint: CGPoint, endingPoint: CGPoint) -> CGFloat {
+    func calculateVoteValueFromPoints(startingPoint: CGPoint, endingPoint: CGPoint) -> CGFloat {
         var horizontalDifference = endingPoint.x - startingPoint.x
         var halfViewWidth = self.bounds.size.width / 2
         return horizontalDifference / halfViewWidth
@@ -87,7 +88,6 @@ class LookVotingTableViewCell: UITableViewCell, UIGestureRecognizerDelegate {
     
     func setSliderPositionBasedOnVotingValue(voteValue: CGFloat) {
         votingSlider.value = Float(CGFloat(0.5) + voteValue)
-        self.delegate?.onVoteSliderSlid(self, voteValue: Float(voteValue))
     }
     
     @IBAction func sliderSliding(sender: UISlider) {
@@ -98,7 +98,7 @@ class LookVotingTableViewCell: UITableViewCell, UIGestureRecognizerDelegate {
             // If it's positive
             let trueValue = (sender.value - 0.5) * 2
         }
-    }    
+    }
     
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

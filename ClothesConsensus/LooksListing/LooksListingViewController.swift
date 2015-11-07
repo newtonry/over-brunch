@@ -39,6 +39,7 @@ class LooksListingViewController: BaseViewController, UITableViewDataSource, UIT
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("lookCell") as LookVotingTableViewCell
+        cell.votingSlider.value = 0.5  // TODO this should be in the cell itself.
         let look = self.looks![indexPath.row]
         cell.setFromLook(look)
         cell.delegate = self
