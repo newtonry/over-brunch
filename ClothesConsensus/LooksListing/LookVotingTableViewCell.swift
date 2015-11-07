@@ -17,6 +17,8 @@ class LookVotingTableViewCell: UITableViewCell, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var lookImageView: UIImageView!
     @IBOutlet weak var votingSlider: UISlider!
+    @IBOutlet weak var thumbnailTextboxView: ThumbnailTextboxView!
+    
     
     var delegate: LookVotingTableViewCellDelegate?
     var look: Look?
@@ -27,6 +29,7 @@ class LookVotingTableViewCell: UITableViewCell, UIGestureRecognizerDelegate {
         setupSlider()
         setupGestureRecognizer()
         setupStyles()
+        setupTextbox()
     }
 
     func setFromLook(look: Look) {
@@ -58,6 +61,10 @@ class LookVotingTableViewCell: UITableViewCell, UIGestureRecognizerDelegate {
         var panGestureRecognizer = UIPanGestureRecognizer(target: self, action: "onPan:")
         lookImageView.userInteractionEnabled = true
         lookImageView.addGestureRecognizer(panGestureRecognizer)
+    }
+    
+    func setupTextbox() {
+        thumbnailTextboxView.editable = false
     }
     
     

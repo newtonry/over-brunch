@@ -8,13 +8,18 @@
 
 import UIKit
 
-class ThumbnailTextboxView: UIView {
+class ThumbnailTextboxView: UIView, UITextFieldDelegate {
     
     // Got all this xib stuff from http://iphonedev.tv/blog/2014/12/15/create-an-ibdesignable-uiview-subclass-with-code-from-an-xib-file-in-xcode-6
     // May want to revisit
     
+    
+    @IBOutlet weak var descriptionField: UITextField!
+    
     // Our custom view from the XIB file
     var view: UIView!
+    var editable: Bool = true
+    
     
     func xibSetup() {
         view = loadViewFromNib()
@@ -38,13 +43,12 @@ class ThumbnailTextboxView: UIView {
         return view
     }
     
-    
     override init(frame: CGRect) {
         // 1. setup any properties here
         
         // 2. call super.init(frame:)
         super.init(frame: frame)
-        
+
         // 3. Setup view from .xib file
         xibSetup()
     }
@@ -58,9 +62,14 @@ class ThumbnailTextboxView: UIView {
         
         // 3. Setup view from .xib file
         xibSetup()
+        
+        descriptionField.delegate = self
     }
     
-    
+    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+        return editable;
+    }
+
     
     /*
     // Only override drawRect: if you perform custom drawing.

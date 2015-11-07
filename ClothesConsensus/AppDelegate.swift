@@ -17,11 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
 //        self.window?.rootViewController = ViewControllers.photoPostViewController() as PhotoPostViewController
-        self.window?.rootViewController = ViewControllers.loginViewController() as LoginViewController
+//        self.window?.rootViewController = ViewControllers.cameraViewController() as CameraViewController
+
         
-        
-        
-        
+                self.window?.rootViewController = ViewControllers.loginViewController() as LoginViewController
         
         
         return true
